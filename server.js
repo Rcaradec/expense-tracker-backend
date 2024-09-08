@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const sequelize = require("./config/database");
-const taskRoutes = require("./routes/taskRoutes");
+const expenseRoutes = require("./routes/expenseRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 
 const app = express();
@@ -16,7 +16,7 @@ sequelize.sync().then(async () => {
   console.log("Database & tables created!");
 });
 
-app.use("/api/tasks", taskRoutes);
+app.use("/api/expenses", expenseRoutes);
 app.use("/api/categories", categoryRoutes);
 
 app.listen(port, () => {
