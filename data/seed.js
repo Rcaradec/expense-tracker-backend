@@ -1,8 +1,9 @@
 require("dotenv").config({
   path: require("path").resolve(__dirname, "../.env"),
 });
+
 const sequelize = require("../config/database");
-const Task = require("../models/Task");
+const Expense = require("../models/Expense");
 const Category = require("../models/Category");
 
 const insertInitialData = async () => {
@@ -17,7 +18,7 @@ const insertInitialData = async () => {
   await Category.bulkCreate(categoriesToInsert);
   console.log("Initial categories inserted!");
 
-  const tasksToInsert = [
+  const expensesToInsert = [
     { description: "Lait", amount: 5, category: "Courses" },
     {
       description: "Vaisselle",
@@ -45,8 +46,8 @@ const insertInitialData = async () => {
       category: "Courses",
     },
   ];
-  await Task.bulkCreate(tasksToInsert);
-  console.log("Initial tasks inserted!");
+  await Expense.bulkCreate(expensesToInsert);
+  console.log("Initial expenses inserted!");
 };
 
 insertInitialData()

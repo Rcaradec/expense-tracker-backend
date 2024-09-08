@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-const Task = sequelize.define("Task", {
+const Expense = sequelize.define("Expense", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -22,4 +22,4 @@ const Task = sequelize.define("Task", {
   },
 });
 
-module.exports = Task;
+module.exports = Expense;
