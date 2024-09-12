@@ -16,8 +16,8 @@ sequelize.sync().then(async () => {
   console.log("Database & tables created!");
 });
 
-app.use("/api/expenses", expenseRoutes);
-app.use("/api/categories", categoryRoutes);
+app.use("/expenses", expenseRoutes);
+app.use("/categories", categoryRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
